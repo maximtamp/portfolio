@@ -5,10 +5,10 @@ const ProjectsCard = ({ }) => {
                 <div>
                     <h3>The Raid on Plantin</h3>
                     <ul>
-                        <li><img src="" alt="" /></li>
-                        <li><img src="" alt="" /></li>
-                        <li><img src="" alt="" /></li>
-                        <li><img src="" alt="" /></li>
+                        <li><img src="#" alt="" /></li>
+                        <li><img src="#" alt="" /></li>
+                        <li><img src="#" alt="" /></li>
+                        <li><img src="#" alt="" /></li>
                     </ul>
                 </div>
                 <ul>
@@ -18,7 +18,7 @@ const ProjectsCard = ({ }) => {
                     <li>Client</li>
                 </ul>
                 <div>
-                    <a href="">Live Demo</a>
+                    <a href="#">Live Demo</a>
                     <button>
                         <p>Read More</p>
                         <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,7 +31,7 @@ const ProjectsCard = ({ }) => {
                     </button>
                 </div>
             </div>
-            <img src="" alt="" />
+            <img src="#" alt="" />
             <div>
                 <span></span>
             </div>

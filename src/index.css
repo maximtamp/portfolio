@@ -24,3 +24,30 @@ html{
   scroll-behavior: smooth;
 }
 
+.typing{
+  animation-name: typing;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes typing {
+  0% {
+    opacity: 0;
+  }
+
+  45% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  95% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
