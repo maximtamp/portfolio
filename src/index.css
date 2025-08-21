@@ -1,9 +1,26 @@
 @import "tailwindcss";
 
 @theme {
-  --font-primary: "Arial", "sans-serif";
+  --font-helvetica: "Arial", "sans-serif";
+  --font-arial: "Arial", "sans-serif";
 
   --color-white: #F2F2F2;
   --color-black: #0C0C0C;
   --color-blue: #6693DE;
 }
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+

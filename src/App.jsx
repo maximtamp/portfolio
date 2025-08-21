@@ -13,8 +13,10 @@ function App() {
 
   return (
     <main>
-      <Nav />
-      <Hero />
+      <div className='h-screen flex flex-col justify-between'>
+        <Nav />
+        <Hero />
+      </div>
       <AboutMe />
       <Skills />
       <Projects />

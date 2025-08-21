@@ -2,7 +2,7 @@ import tailwindCssLogo from "../assets/tailwindcss.png";
 
 const WorkingOn = ({ }) => {
     return (
-        <section>
+        <section id="working-on">
             <h2>Working On</h2>
             <div>
                 <div>
