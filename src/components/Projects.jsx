@@ -3,7 +3,7 @@ import ProjectsCard from './ProjectCard';
 
 const Projects = ({ }) => {
     return (
-        <section>
+        <section id="projects">
             <h2>Projects</h2>
             <ProjectsFilter />
             <ProjectsCard />
