@@ -2,7 +2,7 @@ import photoMe from "../assets/photo-me.png";
 
 const AboutMe = () => {
     return (
-        <section id="about-me" className="px-4 mt-10 mb-40 overflow-hidden">
+        <section id="about-me" className="px-4 mt-10 mb-40 overflow-hidden visually-hidden">
             <h2 className="font-helvetica text-[100px] font-bold uppercase -mb-4">Me</h2>
             <div className="overflow-scroll">
                 <ul className="grid grid-cols-10 grid-rows-2 w-454 h-86">
