@@ -52,3 +52,79 @@ export const skills = [
             skills: ["Animation", "Animation Principles", "Product Animation", "Pitch Deck", "Animatic", "Rough Edit", "Sound Design"]
         },
 ];
+
+export const projects = [
+    {
+        name: "The Raid on Plantin",
+        date: "Jan 2025",
+        description: "",
+        thumbnail: "the-raid-on-plantin-thumbnail.png",
+        tools: [
+            { name: "Figma", icon: "figma-icon.png" },
+            { name: "GSAP", icon: "gsap-icon.png" },
+            { name: "Photoshop", icon: "photoshop-icon.png" },
+            { name: "Vite", icon: "vite-icon.png" },
+        ],
+        hashtags: ["Responsive", "Storytelling", "Interact", "Client"],
+        colaborators: "none",
+        category: ["UX", "Design", "Motion", "Development"],
+        primary: { label: "Live Demo", link: "https://maximtampere.github.io/the-raid-on-plantin/" },
+        secondary: "none"
+    },
+    {
+        name: "Fubble",
+        date: "Jun 2024",
+        description: "",
+        thumbnail: "fubble-thumbnail.png",
+        tools: [
+            { name: "Figma", icon: "figma-icon.png" },
+            { name: "Illustrator", icon: "illustrator-icon.png" },
+            { name: "Miro", icon: "miro-icon.png" },
+            { name: "php", icon: "php-icon.png" },
+        ],
+        hashtags: ["Database", "Experience", "Interact", "Heuristics"],
+        colaborators: "none",
+        category: ["UX", "Design", "Development"],
+        primary: { label: "Live Demo", link: "https://tamperemaxim.be/fubble/" },
+        secondary: {label: "Explore Miro", link: "" }
+    },
+    {
+        name: "KLM Watch",
+        date: "May 2024",
+        description: "(Dutch Only)",
+        thumbnail: "fubble-thumbnail.png",
+        tools: [
+            { name: "Google Form", icon: "google-form-icon.png" },
+            { name: "Figjam", icon: "figjam-icon.png" },
+            { name: "Figma", icon: "figma-icon.png" },
+            { name: "Miro", icon: "miro-icon.png" },
+        ],
+        hashtags: ["User Testing", "Prototyping", ""],
+        colaborators: [
+            { name: "Lenie Debruyne", link: "https://www.linkedin.com/in/lenie-debruyne-700594305/" },
+            { name: "Kiara Lambert", link: "#" }
+        ],
+        category: ["UX"],
+        primary: { label: "Behance", link: "https://www.behance.net/gallery/225607289/KLM-Watch" },
+        secondary: "none"
+    },
+    {
+        name: "Immigrant Research",
+        date: "Dec 2024",
+        description: "(Dutch Only)",
+        thumbnail: "fubble-thumbnail.png",
+        tools: [
+            { name: "Figma", icon: "figma-icon.png" },
+            { name: "Google Form", icon: "google-form-icon.png" },
+            { name: "Miro", icon: "miro-icon.png" },
+        ],
+        hashtags: ["Data Visualization", "Interview", "Client"],
+        colaborators: [
+            { name: "Lenie Debruyne", link: "https://www.linkedin.com/in/lenie-debruyne-700594305/" },
+            { name: "Kiara Lambert", link: "#" }
+        ],
+        category: ["UX"],
+        primary: { label: "Behance", link: "https://www.behance.net/gallery/214794167/Immigranten-onderzoeksopdracht" },
+        secondary: "none"
+    }
+];
