@@ -1,5 +1,6 @@
 import SkillSet from './SkillSet';
 import { skills } from '../data';
+
 const Skills = ({ }) => {
     return (
         <section id='skills' className='bg-black text-white font-arial pb-30'>
