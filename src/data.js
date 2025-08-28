@@ -63,7 +63,6 @@ export const projects = [
             { name: "Figma", icon: "figma-icon.png" },
             { name: "GSAP", icon: "gsap-icon.png" },
             { name: "Photoshop", icon: "photoshop-icon.png" },
-            { name: "Vite", icon: "vite-icon.png" },
         ],
         hashtags: ["Responsive", "Storytelling", "Interact", "Client"],
         colaborators: "none",

@@ -2,32 +2,34 @@ import { useState } from "react";
 
 const ProjectsCard = ({ project }) => {
     const [open, setOpen] = useState(false);
+    //min-w-[clamp(21.4375rem,_-2rem_+_100vw,_31.25rem)]
+    //w-880 Card-w-400
 
     return (
-        <section className="mx-4 grid min-w-[343px] max-w-[500px] snap-center" >
+        <section className="mx-[clamp(1rem,_-15.625rem_+_50vw,_11.875rem)] grid min-w-[clamp(21.4375rem,_-2rem_+_100vw,_31.25rem)] max-w-[500px] snap-center min-[880px]:mx-0 min-[880px]:min-w-[0px] min-[880px]:w-[clamp(25rem,_-2.5rem_+_50vw,_31.25rem)]">
             <div className="row-1 col-1 font-arial flex flex-col-reverse">
-                <div className="bg-black text-white p-3 flex flex-col gap-6">
+                <div className="bg-black text-white p-[clamp(0.75rem,_0.5739rem_+_0.7512vw,_1.25rem)] flex flex-col gap-6">
                     <div className="flex flex-col gap-3" >
                         <div className="flex justify-between items-center">
-                            <h3 className="text-[20px] font-bold font-helvetica">{project.name}</h3>
+                            <h3 className="text-[clamp(1.25rem,_1.0739rem_+_0.7512vw,_1.75rem)] font-bold font-helvetica">{project.name}</h3>
                             <ul className="flex gap-2">
                                 {
                                     project.tools.map((tool, index) => (
-                                        <li className="bg-blue h-6 w-6 p-0.5" key={index}><img src={new URL(`../assets/${tool.icon}`, import.meta.url).href} alt={tool.name} /></li>
+                                        <li className="bg-blue h-[clamp(1.5rem,_1.3239rem_+_0.7512vw,_2rem)] w-[clamp(1.5rem,_1.3239rem_+_0.7512vw,_2rem)] p-[clamp(0.125rem,_0.081rem_+_0.1878vw,_0.25rem)]" key={index}><img src={new URL(`../assets/${tool.icon}`, import.meta.url).href} alt={tool.name} /></li>
                                     ))
                                 }
                             </ul>
                         </div>
-                        <ul className="flex gap-3">
+                        <ul className="flex gap-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)]">
                             {
                                 project.hashtags.map((hashtag, index) => (
-                                    <li className="text-[14px] opacity-60" key={index}>#{hashtag}</li>
+                                    <li className="text-[clamp(0.875rem,_0.743rem_+_0.5634vw,_1.25rem)] opacity-60" key={index}>#{hashtag}</li>
                                 ))
                             }
                         </ul>
                     </div>
-                    <div className="flex justify-between items-end text-[16px]">
-                        <a className="text-black bg-white px-3 py-2" href={project.primary.link} target="_blank">{project.primary.label}</a>
+                    <div className="flex justify-between items-end text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)]">
+                        <a className="text-black bg-white px-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] py-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)]" href={project.primary.link} target="_blank">{project.primary.label}</a>
                         <button onClick={() => setOpen(!open)} className="flex items-center gap-2">
                             <p>Read More</p>
                             <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -42,22 +44,22 @@ const ProjectsCard = ({ project }) => {
                 </div>
                 <div className="grid">
                     <img className="row-1 col-1" src={new URL(`../assets/${project.thumbnail}`, import.meta.url).href} alt={project.name} />
-                    <ul className="row-1 col-1 flex gap-2 ml-auto mt-3 mr-3">
+                    <ul className="row-1 col-1 flex gap-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)] ml-auto mt-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] mr-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)]">
                         {
                             project.category.map((category, index) => (
-                                <li className="bg-blue h-min px-1 py-0.5 text-white text-[14px]" key={index}>{category}</li>
+                                <li className="bg-blue h-min px-[clamp(0.25rem,_0.162rem_+_0.3756vw,_0.5rem)] py-[clamp(0.125rem,_0.103rem_+_0.0939vw,_0.1875rem)] text-white text-[clamp(0.875rem,_0.831rem_+_0.1878vw,_1rem)]" key={index}>{category}</li>
                             ))
                         }
                     </ul>
                 </div>
             </div>
             <div className={`row-1 col-1 z-900 flex flex-col justify-between overflow-hidden transition-all duration-500 transform origin-top ${open ? "max-h-full scale-y-100" : "max-h-0 scale-y-0"
-                } bg-black text-white p-4`}>
+                } bg-black text-white p-[clamp(0.75rem,_0.5739rem_+_0.7512vw,_1.25rem)]`}>
                 <div className="flex flex-col gap-3">
-                    <div className="flex justify-between items-center">
+                    <div className="flex justify-between items-center mb-2">
                         <div className="flex flex-row items-center gap-3">
-                            <h3 className="text-[20px] font-bold font-helvetica">{project.name}</h3>
-                            <p className="text-[14px] opacity-75 italic">{project.date}</p>
+                            <h3 className="text-[clamp(1.25rem,_1.0739rem_+_0.7512vw,_1.75rem)] font-bold font-helvetica">{project.name}</h3>
+                            <p className="text-[clamp(0.875rem,_0.831rem_+_0.1878vw,_1rem)] opacity-75 italic">{project.date}</p>
                         </div>
                         <button className="bg-blue p-1.5 z-901" onClick={() => setOpen(!open)}>
                             <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -67,23 +69,23 @@ const ProjectsCard = ({ project }) => {
                         </button>
                     </div>
                     {project.colaborators != "none" && (
-                        <div className="flex flex-row items-center gap-2">
-                            <h4 className="text-[14px] opacity-75">Colaborators:</h4>
-                            <ul className="flex flex-row gap-2">
+                        <div className="flex flex-row items-center gap-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)]">
+                            <h4 className="text-[clamp(0.875rem,_0.787rem_+_0.3756vw,_1.125rem)] opacity-75">Colaborators:</h4>
+                            <ul className="flex flex-row gap-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)]">
                                 {
                                     project.colaborators.map((colaborator, index) => (
-                                    <li key={index}><a className="bg-blue h-min px-1 py-0.5 text-white text-[14px]" href={colaborator.link} target="_blank">{colaborator.name}</a></li>
+                                        <li key={index}><a className="bg-blue h-min px-1 py-0.5 text-white text-[clamp(0.875rem,_0.787rem_+_0.3756vw,_1.125rem)]" href={colaborator.link} target="_blank">{colaborator.name}</a></li>
                                 ))
                             }
                             </ul>
                         </div>
                     )}
-                    <p>{project.description}</p>
+                    <p className="text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)]/[120%]">{project.description}</p>
                 </div>
-                <div className="flex justify-between">
-                    <a className="text-black bg-white px-3 py-2" href={project.primary.link} target="_blank">{project.primary.label}</a>
+                <div className="flex justify-between text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)]">
+                    <a className="text-black bg-white px-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] py-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)]" href={project.primary.link} target="_blank">{project.primary.label}</a>
                     {project.secondary != "none" && (
-                        <a className="border-white border-2 px-3 py-2" href={project.secondary.link} target="_blank">{project.secondary.label}</a>
+                        <a className="border-white border-2 px-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] py-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)]" href={project.secondary.link} target="_blank">{project.secondary.label}</a>
                     )}
                 </div>
             </div>
