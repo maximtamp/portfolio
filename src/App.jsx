@@ -27,7 +27,7 @@ function App() {
   }
 
   return (
-    <main className='overflow-x-hidden'>
+    <main className='bg-white'>
       <div className='h-dvh flex flex-col justify-between'>
         <Nav onTop={onTop} open={open} setOpen={handleOpen} />
         <Hero />
