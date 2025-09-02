@@ -4,7 +4,7 @@ const AboutMe = () => {
     return (
         <section id="about-me" className="px-4 mt-10 mb-40 w-min mx-auto overflow-x-hidden">
             <h2 className="font-helvetica text-[clamp(6.25rem,_2.7289rem_+_15.0235vw,_16.25rem)] font-bold uppercase -mb-4 min-[1160px]:text-right min-[1160px]:-mb-[clamp(6rem,_1.8571rem_+_5.7143vw,_7rem)] min-[1160px]:-mr-[clamp(1.5rem,_-0.5714rem_+_2.8571vw,_2rem)]">Me</h2>
-            <div className="">
+            <div className="overflow-x-hidden">
                 <ul className="grid grid-cols-[repeat(10,_clamp(10rem,_9.1197rem_+_3.7559vw,_12.5rem))] grid-rows-[repeat(2,_clamp(10rem,_9.1197rem_+_3.7559vw,_12.5rem))] gap-[clamp(1.5rem,_1.1479rem_+_1.5023vw,_2.5rem)] min-[1160px]:grid-cols-[repeat(5,_clamp(10rem,_9.1197rem_+_3.7559vw,_12.5rem))] min-[1160px]:grid-rows-[repeat(5,_clamp(10rem,_9.1197rem_+_3.7559vw,_12.5rem))]">
                     <li className="w-[clamp(10rem,_9.1197rem_+_3.7559vw,_12.5rem)] h-[clamp(10rem,_9.1197rem_+_3.7559vw,_12.5rem)] bg-blue text-white flex flex-col-reverse justify-center items-center min-[1160px]:col-3 min-[1160px]:row-1">
                         <h3 className="font-arial text-[clamp(1.125rem,_0.993rem_+_0.5634vw,_1.5rem)] opacity-80 -mt-[clamp(0.75rem,_0.4859rem_+_1.1268vw,_1.5rem)]">Age</h3>

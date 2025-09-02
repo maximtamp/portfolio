@@ -11,16 +11,16 @@ const Nav = ({ onTop, open, setOpen }) => {
                 <div className={onTop ? null :`fixed top-3 right-2 z-1000 md:static`}>
                     <ul className={`${onTop ? "" : "-mr-4 -mt-2 md:-mr-0 md:-mt-0"} flex flex-col items-end gap-2 absolute top-14 right-0 p-4 overflow-hidden md:flex-row md:gap-8 md:static ${open ? null : "max-[768px]:pointer-events-none"}`}>
                         <li className={`w-max transform transition-all duration-500 ${open ? "delay-0 translate-x-0" : "delay-300 translate-x-50"} md:translate-x-0`}>
-                            <a onClick={handleClickNav} className="bg-blue text-white text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)] px-1.5 py-1 md:bg-transparent md:text-black md:p-0 md:hover:text-blue" href="#about-me">About Me</a>
+                            <a onClick={handleClickNav} className="bg-blue text-white text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)] px-1.5 py-1 md:bg-transparent md:text-black md:p-0 md:hover:text-blue md:duration-100" href="#about-me">About Me</a>
                         </li>
                         <li className={`w-max transform transition-all duration-500 ${open ? "delay-100 translate-x-0" : "delay-200 translate-x-50"} md:translate-x-0`}>
-                            <a onClick={handleClickNav} className="bg-blue text-white text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)] px-1.5 py-1 md:bg-transparent md:text-black md:p-0 md:hover:text-blue" href="#skills">Skills</a>
+                            <a onClick={handleClickNav} className="bg-blue text-white text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)] px-1.5 py-1 md:bg-transparent md:text-black md:p-0 md:hover:text-blue md:duration-100" href="#skills">Skills</a>
                         </li>
                         <li className={`w-max transform transition-all duration-500 ${open ? "delay-200 translate-x-0" : "delay-100 translate-x-50"} md:translate-x-0`}>
-                            <a onClick={handleClickNav} className="bg-blue text-white text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)] px-1.5 py-1 md:bg-transparent md:text-black md:p-0 md:hover:text-blue" href="#projects">Projects</a>
+                            <a onClick={handleClickNav} className="bg-blue text-white text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)] px-1.5 py-1 md:bg-transparent md:text-black md:p-0 md:hover:text-blue md:duration-100" href="#projects">Projects</a>
                         </li>
                         <li className={`w-max transform transition-all duration-500 ${open ? "delay-300 translate-x-0" : "delay-0 translate-x-50"} md:translate-x-0`}>
-                            <a onClick={handleClickNav} className="bg-blue text-white text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)] px-1.5 py-1 md:bg-transparent md:text-black md:p-0 md:hover:text-blue" href="#working-on">Working On</a>
+                            <a onClick={handleClickNav} className="bg-blue text-white text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)] px-1.5 py-1 md:bg-transparent md:text-black md:p-0 md:hover:text-blue md:duration-100" href="#working-on">Working On</a>
                         </li>
                     </ul>
                     <button onClick={handleClickNav} className={`relative w-7 h-6 flex flex-col justify-between items-center gap-1 ${onTop ? null : "bg-blue w-11 h-11 px-2 py-2.5"} md:hidden`} >

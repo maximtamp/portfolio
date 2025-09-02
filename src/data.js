@@ -91,7 +91,7 @@ export const projects = [
         name: "KLM Watch",
         date: "May 2024",
         description: "(Dutch Only)",
-        thumbnail: "fubble-thumbnail.png",
+        thumbnail: "klm-watch-thumbnail.png",
         tools: [
             { name: "Google Form", icon: "google-form-icon.png" },
             { name: "Figjam", icon: "figjam-icon.png" },
@@ -111,7 +111,7 @@ export const projects = [
         name: "Immigrant Research",
         date: "Dec 2024",
         description: "(Dutch Only)",
-        thumbnail: "fubble-thumbnail.png",
+        thumbnail: "immigrant-research-thumbnail.png",
         tools: [
             { name: "Figma", icon: "figma-icon.png" },
             { name: "Google Form", icon: "google-form-icon.png" },

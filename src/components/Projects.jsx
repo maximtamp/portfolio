@@ -20,7 +20,15 @@ const Projects = () => {
 
     const changeFilter = (category) => {
         setFilter(category);
-        setFilteredProjects(category === "all" ? projects : projects.filter(project => project.category.includes(category)))
+        if (showMore) {
+            setFilteredProjects(category === "all" ? projects : projects.filter(project => project.category.includes(category)))
+        } else {
+            if (window.innerWidth < 880) {
+                setFilteredProjects(category === "all" ? projects : projects.filter(project => project.category.includes(category)))
+            } else {
+                setFilteredProjects(projects.slice(0, 2));
+            }
+        }
     };
 
     const scroll = (direction) => {
@@ -55,17 +63,19 @@ const Projects = () => {
     return (
         <section id="projects" className='w-full overflow-hidden'>
             <h2 className='text-[clamp(4.5rem,_-0.051rem_+_19.4175vw,_23.25rem)] text-black font-bold font-helvetica uppercase -ml-[clamp(0.375rem,_-0.2318rem_+_2.589vw,_2.875rem)] -mt-[clamp(2rem,_0.1796rem_+_7.767vw,_9.5rem)]'>Projects</h2>
-            <ProjectsFilter filter={filter} setFilter={changeFilter} />
+            <ProjectsFilter setFilter={changeFilter} />
             <ul className='flex mt-7 overflow-auto scroll-smooth snap-x snap-mandatory no-scrollbar -ms-overflow-style-none min-[880px]:flex-wrap min-[880px]:gap-[clamp(2rem,_-10rem_+_17.7778vw,_6rem)] min-[880px]:mx-[clamp(1.5rem,_-26.25rem_+_41.1111vw,_10.75rem)] min-[1440px]:w-[1096px] min-[1440px]:mx-auto' ref={scrollRef} onScroll={onScroll}>
                 {filteredProjects.map((project, index) => (
-                    <ProjectsCard key={index} project={project} />
+                    <ProjectsCard key={index} project={project} shown={index === currentIndex} last={index === filteredProjects.length - 1} />
                 ))}
             </ul>
-            <button onClick={handleShowMore} className='max-[880px]:hidden flex items-center gap-2 mx-auto mt-12'>
-                <svg className={`rotate-${showMore ? '180' : '0'}`} width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M2 1.5L13 15.5L24 1.5" stroke="#6693DE" stroke-width="3" />
-                </svg>
-                <p className='text-[20px] text-blue font-medium'>{showMore ? 'Show Less' : 'Discover More'}</p>
+            <button onClick={handleShowMore} className='max-[880px]:hidden mx-auto mt-12 cursor-pointer group flex'>
+                <a href={`${showMore ? '#' : '#projects-filter'}`} className={`${showMore ? '' : 'pointer-events-none'} flex items-center gap-2`}>
+                    <svg className={`${showMore ? 'rotate-180' : 'rotate-0'}`} width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 1.5L13 15.5L24 1.5" stroke="#6693DE" stroke-width="3" />
+                    </svg>
+                    <p className='text-[20px] text-blue font-medium duration-100 group-hover:underline underline-offset-4 decoration-3'>{showMore ? 'Show Less' : 'Discover More'}</p>
+                </a>
             </button>
             <div className="flex justify-between mx-[clamp(1rem,_-15.625rem_+_50vw,_11.875rem)] mt-8 w-[clamp(21.4375rem,_-2rem_+_100vw,_31.25rem)] min-[880px]:hidden">
                 <button onClick={() => scroll('left')} className="bg-black p-3">
