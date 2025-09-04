@@ -27,7 +27,7 @@ function App() {
   }
 
   return (
-    <main id='main' className='bg-white selection:bg-blue selection:text-white overflow-x-hidden'>
+    <main id='main' className='bg-white selection:bg-blue selection:text-white'>
       <div className='h-dvh flex flex-col justify-between'>
         <Nav onTop={onTop} open={open} setOpen={handleOpen} />
         <Hero />
