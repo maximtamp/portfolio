@@ -127,3 +127,32 @@ export const projects = [
         secondary: "none"
     }
 ];
+
+export const fonts = [
+    "Helvetica, Arial, sans-serif",
+    "Verdana, Geneva, sans-serif",
+    "Tahoma, Geneva, sans-serif",
+    "Trebuchet MS, sans-serif",
+    "Impact, Charcoal, sans-serif",
+    "Gill Sans, Geneva, sans-serif",
+    "Arial Black, Gadget, sans-serif",
+    "Times New Roman, Times, serif",
+    "Georgia, serif",
+    "Garamond, serif",
+    "Palatino, Palatino Linotype, serif",
+    "Bookman, serif",
+    "Baskerville, serif",
+    "Didot, serif",
+    "Courier New, Courier, monospace",
+    "Lucida Console, Monaco, monospace",
+    "Consolas, monospace",
+    "Monaco, monospace",
+    "Source Code Pro, monospace",
+    "Comic Sans MS, cursive, sans-serif",
+    "Brush Script MT, cursive, sans-serif",
+    "Dancing Script, cursive, sans-serif",
+    "Papyrus, fantasy",
+    "Copperplate, fantasy",
+    "Impact, fantasy",
+    "Jokerman, fantasy"
+];

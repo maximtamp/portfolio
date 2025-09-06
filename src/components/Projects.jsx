@@ -1,7 +1,9 @@
 import ProjectsFilter from './ProjectsFilter';
 import ProjectsCard from './ProjectCard';
 import { projects } from '../data';
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Projects = () => {
     const [filter, setFilter] = useState("all");
@@ -26,7 +28,7 @@ const Projects = () => {
             if (window.innerWidth < 880) {
                 setFilteredProjects(category === "all" ? projects : projects.filter(project => project.category.includes(category)))
             } else {
-                setFilteredProjects(projects.slice(0, 2));
+                setFilteredProjects((category === "all" ? projects : projects.filter(project => project.category.includes(category))).slice(0, 2));
             }
         }
     };
@@ -59,6 +61,25 @@ const Projects = () => {
             setFilteredProjects(newFiltered);
         }
     }
+
+    useEffect(() => {
+            gsap.registerPlugin(ScrollTrigger);
+    
+            gsap.fromTo("#projects h2",
+                { y: -300 },
+                {
+                    y: 0,
+                    scrollTrigger: {
+                        trigger: "#projects h2",
+                        scrub: true,
+                        start: `75% 75%`,
+                        end: "75% 25%",
+                        pinSpacer: false,
+                        once: true,
+                    },
+                }
+            );
+        }, []);
 
     return (
         <section id="projects" className='w-full overflow-hidden'>

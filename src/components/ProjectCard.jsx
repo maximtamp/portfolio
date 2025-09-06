@@ -41,7 +41,7 @@ const ProjectsCard = ({ project, shown, last }) => {
                     </div>
                 </div>
                 <div className="grid">
-                    <img className={`row-1 col-1 duration-100 group-hover:grayscale-0 z-0 ${shown ? 'duration-400 grayscale-0' : 'grayscale-100'}`} src={new URL(`../assets/${project.thumbnail}`, import.meta.url).href} alt={project.name} />
+                    <img className={`row-1 col-1 duration-100 group-hover:grayscale-0 z-0 ${ window.innerWidth < 880 && shown ? 'duration-400 grayscale-0' : 'grayscale-100'}`} src={new URL(`../assets/${project.thumbnail}`, import.meta.url).href} alt={project.name} />
                     <ul className="row-1 col-1 flex gap-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)] ml-auto mt-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] mr-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] z-1">
                         {
                             project.category.map((category, index) => (
