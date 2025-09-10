@@ -4,7 +4,6 @@ import Hero from './components/Hero'
 import AboutMe from './components/AboutMe'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
-import PingPong from './components/PingPong'
 import WorkingOn from './components/WorkingOn'
 import Footer from './components/Footer'
 
@@ -27,7 +26,7 @@ function App() {
   }
 
   return (
-    <main id='main' className='bg-white selection:bg-blue selection:text-white'>
+    <main id='main' className='bg-white selection:bg-blue selection:text-white overflow-x-hidden'>
       <div className='h-dvh flex flex-col justify-between'>
         <Nav onTop={onTop} open={open} setOpen={handleOpen} />
         <Hero />
@@ -35,7 +34,6 @@ function App() {
       <AboutMe />
       <Skills />
       <Projects />
-      <PingPong />
       <WorkingOn />
       <Footer />
     </main>

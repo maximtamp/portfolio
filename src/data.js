@@ -67,7 +67,7 @@ export const projects = [
         hashtags: ["Responsive", "Storytelling", "Interact", "Client"],
         colaborators: "none",
         category: ["UX", "Design", "Motion", "Development"],
-        primary: { label: "Live Demo", link: "https://maximtampere.github.io/the-raid-on-plantin/" },
+        primary: { label: "Live Demo", link: "https://maximtampere.github.io/the-raid-on-plantin/", desktopOnly: false},
         secondary: "none"
     },
     {
@@ -84,8 +84,8 @@ export const projects = [
         hashtags: ["Database", "Experience", "Interact", "Heuristics"],
         colaborators: "none",
         category: ["UX", "Design", "Development"],
-        primary: { label: "Live Demo", link: "https://tamperemaxim.be/fubble/" },
-        secondary: {label: "Explore Miro", link: "" }
+        primary: { label: "Live Demo", link: "https://tamperemaxim.be/fubble/", desktopOnly: true },
+        secondary: { label: "Explore Miro", link: "", desktopOnly: false }
     },
     {
         name: "KLM Watch",
@@ -104,7 +104,7 @@ export const projects = [
             { name: "Kiara Lambert", link: "#" }
         ],
         category: ["UX"],
-        primary: { label: "Behance", link: "https://www.behance.net/gallery/225607289/KLM-Watch" },
+        primary: { label: "Behance", link: "https://www.behance.net/gallery/225607289/KLM-Watch", desktopOnly: false },
         secondary: "none"
     },
     {
@@ -123,7 +123,7 @@ export const projects = [
             { name: "Kiara Lambert", link: "#" }
         ],
         category: ["UX"],
-        primary: { label: "Behance", link: "https://www.behance.net/gallery/214794167/Immigranten-onderzoeksopdracht" },
+        primary: { label: "Behance", link: "https://www.behance.net/gallery/214794167/Immigranten-onderzoeksopdracht", desktopOnly: false },
         secondary: "none"
     }
 ];

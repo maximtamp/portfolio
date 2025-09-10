@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { fonts } from "../data";
@@ -44,83 +44,106 @@ const SkillSet = ({ title, tools, skills }) => {
         }
     };
 
+    const containerRef = useRef(null);
+
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
 
-        gsap.fromTo(".dev-title-char",
-            { opacity: 0 },
-            {
-                opacity: 1,
+        let ctx = gsap.context(() => {
+            let mq = gsap.matchMedia();
+
+            mq.add("(min-width: 1160px)", () => {
+                if(title === "development"){
+                    gsap.fromTo(".dev-title-char",
+                        { opacity: 0 },
+                        {
+                            opacity: 1,
+                            duration: 0.2,
+                            ease: "power3.out",
+                            scrollTrigger: {
+                                trigger: ".dev-title",
+                                start: `50% 90%`,
+                                end: "bottom top",
+                            },
+                            stagger: 0.2
+                        }
+                    );
+                }
+
+                const toolsEl = containerRef.current?.querySelectorAll(`.tools-${title} li`);
+                if(toolsEl && toolsEl.length > 0){
+                    gsap.fromTo(`.tools-${title} li`,
+                        { x: "1200%" },
+                        {
+                            x: 0,
+                            duration: 1.5,
+                            ease: "power3.out",
+                            stagger: 0.08,
+                            scrollTrigger: {
+                                trigger: containerRef.current,
+                                start: "top 70%",
+                                toggleActions: "play none none none",
+                            }
+                        }
+                    );
+                }
+                
+                const skillsEl = containerRef.current?.querySelectorAll(`.skills-${title} li`);
+                if (skillsEl && skillsEl.length > 0) {
+                    gsap.fromTo(skillsEl, { x: "1200%" }, {
+                        x: 0,
+                        duration: 1.5,
+                        ease: "power3.out",
+                        stagger: 0.08,
+                        scrollTrigger: {
+                            trigger: containerRef.current,
+                            start: "top 80%",
+                            toggleActions: "play none none none",
+                        }
+                    });
+                }
+
+                if(title === "ux"){
+                    const uxBtn = containerRef.current?.querySelector("button");
+                    if (uxBtn) {
+                        gsap.fromTo(uxBtn,
+                            { y: "1200%" },
+                            {
+                                y: 0,
+                                duration: 1.5,
+                                ease: "power3.out",
+                                scrollTrigger: {
+                                    trigger: containerRef.current,
+                                    start: "top 80%",
+                                    toggleActions: "play none none none",
+                                }
+                            }
+                        );
+                    }
+                }
+
+            });
+
+            ScrollTrigger.refresh();
+        }, containerRef);
+        
+        if (title === "design") {
+            const letters = gsap.utils.toArray(".design-title-char");
+            gsap.to({}, {
                 duration: 0.2,
-                ease: "power3.out",
-                scrollTrigger: {
-                    trigger: ".dev-title",
-                    start: `50% 90%`,
-                    end: "bottom top",
-                },
-                stagger: 0.2
-            }
-        );
-
-        const letters = gsap.utils.toArray(".design-title-char");
-        gsap.to({}, {
-            duration: 0.2,
-            repeatDelay: 2,
-            repeat: -1,
-            onRepeat: () => {
-                letters.forEach((letter) => {
-                    letter.style.fontFamily = fonts[Math.floor(Math.random() * fonts.length )]
-                })
-            }
-        })
-
-
-        gsap.fromTo(`.tools-${title} li`,
-            { x: "1200%" },
-            {
-                x: 0,
-                duration: 1.5,
-                ease: "power3.out",
-                stagger: 0.08,
-                scrollTrigger: {
-                    trigger: `.skill-set-${title}`,
-                    start: "top 70%",
-                    toggleActions: "play none none none",
+                repeatDelay: 2,
+                repeat: -1,
+                onRepeat: () => {
+                    letters.forEach((letter) => {
+                        letter.style.fontFamily = fonts[Math.floor(Math.random() * fonts.length)]
+                    })
                 }
-            }
-        );
-        gsap.fromTo(`.skills-${title} li`,
-            { x: "1200%" },
-            {
-                x: 0,
-                duration: 1.5,
-                ease: "power3.out",
-                stagger: 0.08,
-                scrollTrigger: {
-                    trigger: `.skill-set-${title}`,
-                    start: "top 80%",
-                    toggleActions: "play none none none",
-                }
-            }
-        );
-        gsap.fromTo(".skill-set-ux button",
-            { y: "1200%" },
-            {
-                y: 0,
-                duration: 1.5,
-                ease: "power3.out",
-                stagger: 0.08,
-                scrollTrigger: {
-                    trigger: ".skill-set-ux",
-                    start: "top 80%",
-                    toggleActions: "play none none none",
-                }
-            }
-        );
+            })
+        }
     }, []);
 
     return (
-        <li className={`skill-set-${title} px-[clamp(0.875rem,_-0.1373rem_+_4.3192vw,_3.75rem)] flex flex-col gap-7`}>
+        <li className={`skill-set-${title} px-[clamp(0.875rem,_-0.1373rem_+_4.3192vw,_3.75rem)] flex flex-col gap-7`} ref={containerRef}>
             {heading}
             <ul className={`tools-${title} flex flex-wrap gap-[clamp(0.375rem,_0.287rem_+_0.3756vw,_0.625rem)]`}>
                 {tools.map((tool, index) => (

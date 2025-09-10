@@ -40,7 +40,6 @@ const AboutMe = () => {
                         start: "top 75%",
                         end: "75% bottom",
                         scrub: true,
-                        markers: true,
                     }
                 });
 

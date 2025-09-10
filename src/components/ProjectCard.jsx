@@ -27,7 +27,7 @@ const ProjectsCard = ({ project, shown, last }) => {
                         </ul>
                     </div>
                     <div className="flex justify-between items-end text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)]">
-                        <a className="text-black bg-white px-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] py-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)] duration-100 hover:bg-blue" href={project.primary.link} target="_blank">{project.primary.label}</a>
+                        <a className={`text-black bg-white px-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] py-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)] duration-100 hover:bg-blue ${project.primary.desktopOnly && window.innerWidth < 880 ? "opacity-50 pointer-events-none" : null}`} href={project.primary.link} target="_blank">{project.primary.desktopOnly && window.innerWidth < 880 ? "Desktop Only" : project.primary.label}</a>
                         <button onClick={() => setOpen(!open)} className="flex items-center gap-2 cursor-pointer duration-100 hover:underline underline-offset-4 decoration-2">
                             <p>Read More</p>
                             <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,9 +81,10 @@ const ProjectsCard = ({ project, shown, last }) => {
                     <p className="text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)]/[120%]">{project.description}</p>
                 </div>
                 <div className="flex justify-between items-center text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)]">
-                    <a className="text-black bg-white px-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] py-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)] duration-100 hover:bg-blue" href={project.primary.link} target="_blank">{project.primary.label}</a>
+                    <a className={`text-black bg-white px-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] py-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)] duration-100 hover:bg-blue ${project.primary.desktopOnly && window.innerWidth < 880 ? "opacity-50 pointer-events-none" : null}`} href={project.primary.link} target="_blank">{project.primary.desktopOnly && window.innerWidth < 880 ? "Desktop Only" : project.primary.label}</a>
                     {project.secondary != "none" && (
-                        <a className="border-white border-2 px-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] py-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)] duration-100 hover:bg-white hover:text-black" href={project.secondary.link} target="_blank">{project.secondary.label}</a>
+                        <a className={`border-white border-2 px-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] py-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)] duration-100 hover:bg-white hover:text-black ${project.secondary.desktopOnly && window.innerWidth < 880 ? "opacity-50 pointer-events-none" : null}`} href={project.secondary.link} target="_blank">{project.secondary.desktopOnly && window.innerWidth < 880 ? "Desktop Only" : project.primary.label}</a>
+                        
                     )}
                 </div>
             </div>
