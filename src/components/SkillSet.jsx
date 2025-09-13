@@ -140,6 +140,7 @@ const SkillSet = ({ title, tools, skills }) => {
                 }
             })
         }
+        return () => ctx.revert();
     }, []);
 
     return (

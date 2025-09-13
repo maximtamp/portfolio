@@ -177,8 +177,8 @@ const AboutMe = () => {
 
 
     return (
-        <section id="about-me" className="px-4 mt-10 pb-25 pt-15 w-screen min-h-[100vh] h-screen min-[1160px]:h-auto min-[1160px]:w-min mx-auto" ref={containerRef}>
-            <h2 className="font-helvetica text-[clamp(6.25rem,_2.7289rem_+_15.0235vw,_16.25rem)] font-bold uppercase -mb-4 min-[1160px]:text-right min-[1160px]:-mb-[clamp(6rem,_1.8571rem_+_5.7143vw,_7rem)] min-[1160px]:-mr-[clamp(1.5rem,_-0.5714rem_+_2.8571vw,_2rem)]">Me</h2>
+        <section id="about-me" className="px-4 my-10 pb-25 pt-6 w-screen min-h-[100vh] h-screen min-[1160px]:h-auto min-[1160px]:w-min mx-auto" ref={containerRef}>
+            <h2 className="font-helvetica text-[8rem] min-[1160px]:text-[clamp(6.25rem,_2.7289rem_+_15.0235vw,_16.25rem)] font-bold uppercase -mb-4 min-[1160px]:text-right min-[1160px]:-mb-[clamp(6rem,_1.8571rem_+_5.7143vw,_7rem)] min-[1160px]:-mr-[clamp(1.5rem,_-0.5714rem_+_2.8571vw,_2rem)]">Me</h2>
             <div className="">
                 <ul className="info grid grid-cols-[repeat(10,_clamp(10rem,_9.1197rem_+_3.7559vw,_12.5rem))] grid-rows-[repeat(2,_clamp(10rem,_9.1197rem_+_3.7559vw,_12.5rem))] gap-[clamp(1.5rem,_1.1479rem_+_1.5023vw,_2.5rem)] min-[1160px]:grid-cols-[repeat(5,_clamp(10rem,_9.1197rem_+_3.7559vw,_12.5rem))] min-[1160px]:grid-rows-[repeat(5,_clamp(10rem,_9.1197rem_+_3.7559vw,_12.5rem))]">
                     <li className="age-box w-[clamp(10rem,_9.1197rem_+_3.7559vw,_12.5rem)] h-[clamp(10rem,_9.1197rem_+_3.7559vw,_12.5rem)] bg-blue text-white flex flex-col-reverse justify-center items-center min-[1160px]:col-3 min-[1160px]:row-1">

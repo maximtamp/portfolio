@@ -16,9 +16,11 @@ const Projects = () => {
             }
         }
     );
+
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showMore, setShowMore] = useState(false);
     const scrollRef = useRef(null);
+    const containerRef = useRef(null);
 
     const changeFilter = (category) => {
         setFilter(category);
@@ -46,7 +48,10 @@ const Projects = () => {
     const onScroll = () => {
         if (scrollRef.current) {
             const scrollLeft = scrollRef.current.scrollLeft;
-            const cardWidth = scrollRef.current.firstChild.offsetWidth;
+            const totalWidth = scrollRef.current.scrollWidth;
+            const itemCount = scrollRef.current.childElementCount;
+            const cardWidth = totalWidth / itemCount;
+
             const index = Math.round(scrollLeft / cardWidth);
             setCurrentIndex(index);
         }
@@ -79,13 +84,34 @@ const Projects = () => {
                     },
                 }
             );
-        }, []);
+
+            let ctx = gsap.context(() => {
+                let mq = gsap.matchMedia();
+                mq.add("(max-width: 879px)", () => {
+                    setFilteredProjects(filter === "all" ? projects : projects.filter(project => project.category.includes(filter)))
+                });
+
+                mq.add("(min-width: 880px)", () => {
+                    if (!showMore) {
+                        const newFiltered = filter === "all" ? projects : projects.filter(project => project.category.includes(filter));
+                        setFilteredProjects(newFiltered.slice(0, 2));                    
+                    } else {
+                        const newFiltered = filter === "all" ? projects : projects.filter(project => project.category.includes(filter));
+                        setFilteredProjects(newFiltered);
+                    }
+                });
+
+            }, containerRef);
+            ScrollTrigger.refresh();
+
+            return () => ctx.revert();
+    }, [filter, showMore]);
 
     return (
         <section id="projects" className='w-full overflow-hidden'>
             <h2 className='text-[clamp(4.5rem,_-0.051rem_+_19.4175vw,_23.25rem)] text-black font-bold font-helvetica uppercase -ml-[clamp(0.375rem,_-0.2318rem_+_2.589vw,_2.875rem)] -mt-[clamp(2rem,_0.1796rem_+_7.767vw,_9.5rem)]'>Projects</h2>
             <ProjectsFilter setFilter={changeFilter} />
-            <ul className='flex mt-7 overflow-auto scroll-smooth snap-x snap-mandatory no-scrollbar -ms-overflow-style-none min-[880px]:flex-wrap min-[880px]:gap-[clamp(2rem,_-10rem_+_17.7778vw,_6rem)] min-[880px]:mx-[clamp(1.5rem,_-26.25rem_+_41.1111vw,_10.75rem)] min-[1440px]:w-[1096px] min-[1440px]:mx-auto' ref={scrollRef} onScroll={onScroll}>
+            <ul className='flex mt-7 overflow-auto scroll-smooth snap-x snap-mandatory no-scrollbar -ms-overflow-style-none max-[879px]:pr-4 min-[880px]:flex-wrap min-[880px]:gap-[clamp(2rem,_-10rem_+_17.7778vw,_6rem)] min-[880px]:mx-[clamp(1.5rem,_-26.25rem_+_41.1111vw,_10.75rem)] min-[1440px]:w-[1096px] min-[1440px]:mx-auto' ref={scrollRef} onScroll={onScroll}>
                 {filteredProjects.map((project, index) => (
                     <ProjectsCard key={index} project={project} shown={index === currentIndex} last={index === filteredProjects.length - 1} />
                 ))}
@@ -99,7 +125,7 @@ const Projects = () => {
                 </a>
             </button>
             <div className="flex justify-between mx-[clamp(1rem,_-15.625rem_+_50vw,_11.875rem)] mt-8 w-[clamp(21.4375rem,_-2rem_+_100vw,_31.25rem)] min-[880px]:hidden">
-                <button onClick={() => scroll('left')} className="bg-black p-3">
+                <button onClick={() => scroll('left')} className={`p-3 ${currentIndex === 0 ? "bg-transparent pointer-events-none" : "bg-black"}`}>
                     <svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.92506e-07 15.8161L28 -3.8147e-06L28 32L4.92506e-07 15.8161Z" fill="#F2F2F2" />
                     </svg>
@@ -111,7 +137,7 @@ const Projects = () => {
                         ))
                     }
                 </ul>
-                <button onClick={() => scroll('right')} className="bg-black p-3">
+                <button onClick={() => scroll('right')} className={`p-3 ${currentIndex === filteredProjects.length - 1 ? "bg-transparent pointer-events-none" : "bg-black"}`}>
                     <svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M28 15.8161L2.79753e-06 -3.8147e-06L0 32L28 15.8161Z" fill="#F2F2F2" />
                     </svg>

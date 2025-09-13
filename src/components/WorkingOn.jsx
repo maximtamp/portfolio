@@ -48,7 +48,7 @@ const WorkingOn = ({ }) => {
 
             ScrollTrigger.refresh();
         }, containerRef);
-
+        return () => ctx.revert();
     }, []);
 
     return (

@@ -4,7 +4,7 @@ const ProjectsCard = ({ project, shown, last }) => {
     const [open, setOpen] = useState(false);
 
     return (
-        <section className={`${last ? "ml-[clamp(1rem,_-15.625rem_+_50vw,_11.875rem)]" : "ml-[clamp(1rem,_-15.625rem_+_50vw,_11.875rem)]"} mr-[clamp(1rem,_-15.625rem_+_50vw,_11.875rem)] grid min-w-[clamp(21.4375rem,_-2rem_+_100vw,_31.25rem)] max-w-[500px] snap-center min-[880px]:mx-0 min-[880px]:min-w-[0px] min-[880px]:w-[clamp(25rem,_-2.5rem_+_50vw,_31.25rem)]`}>
+        <section className={`mx-[clamp(1rem,_-15.625rem_+_50vw,_11.875rem)] grid min-w-[clamp(21.4375rem,_-2rem_+_100vw,_31.25rem)] max-w-[500px] snap-center min-[880px]:mx-0 min-[880px]:min-w-[0px] min-[880px]:w-[clamp(25rem,_-2.5rem_+_50vw,_31.25rem)]`}>
             <div className="row-1 col-1 font-arial flex flex-col-reverse group">
                 <div className="bg-black text-white p-[clamp(0.75rem,_0.5739rem_+_0.7512vw,_1.25rem)] flex flex-col gap-6">
                     <div className="flex flex-col gap-3" >

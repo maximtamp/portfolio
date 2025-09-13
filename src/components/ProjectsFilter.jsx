@@ -1,10 +1,20 @@
+import { useState } from "react";
+
 const ProjectsFilter = ({ setFilter }) => {
+
+    const [selected, setSelected] = useState("all")
+
+    const handleChangeFilter = (value) => {
+        setSelected(value)
+        setFilter(value)
+    }
+
     return (
         <div id="projects-filter" className="mt-20 z-901">
             <h3 className="visually-hidden">Projects Filter</h3>
             <div className="flex w-full min-[880px]:hidden">
                 <div className="relative inline-block w-[clamp(21.4375rem,_-2rem_+_100vw,_31.25rem)] mx-[clamp(1rem,_-15.625rem_+_50vw,_11.875rem)]">    
-                    <select name="filter" id="filter" onChange={(e) => setFilter(e.target.value)} className="bg-blue w-full px-3 py-2 text-white text-[18px] uppercase appearance-none -webkit-appearance-none -moz-appearance-none focus:outline-none focus:border-none focus:box-shadow-none">
+                    <select name="filter" id="filter" onChange={(e) => handleChangeFilter(e.target.value)} value={selected} className="bg-blue w-full px-3 py-2 text-white text-[18px] uppercase appearance-none -webkit-appearance-none -moz-appearance-none focus:outline-none focus:border-none focus:box-shadow-none">
                         <option value="all">All</option>
                         <option value="Design">Design</option>
                         <option value="Motion">Motion</option>
@@ -19,28 +29,28 @@ const ProjectsFilter = ({ setFilter }) => {
                 </div>
             </div>
             <div className="max-[880px]:hidden flex text-[20px] mx-auto mb-16 w-max">
-                <label className="cursor-pointer flex flex-col group" onClick={(e) => setFilter(e.target.value)}>
-                    <input type="radio" name="filter" value="all" className="peer hidden" defaultChecked />
+                <label className="cursor-pointer flex flex-col group">
+                    <input type="radio" name="filter" value="all" className="peer hidden" onChange={(e) => handleChangeFilter(e.target.value)} checked={selected === "all"} />
                     <span className="px-3 py-1">All</span>
                     <span className="h-1 w-full border-b-1 peer-checked:border-b-4 duration-100 group-hover:border-b-3"></span>
                 </label>
-                <label className="cursor-pointer flex flex-col group" onClick={(e) => setFilter(e.target.value)}>
-                    <input type="radio" name="filter" value="Design" className="peer hidden" />
+                <label className="cursor-pointer flex flex-col group">
+                    <input type="radio" name="filter" value="Design" className="peer hidden" onChange={(e) => handleChangeFilter(e.target.value)} checked={selected === "Design"} />
                     <span className="px-3 py-1">Design</span>
                     <span className="h-1 w-full border-b-1 peer-checked:border-b-4 duration-100 group-hover:border-b-3"></span>
                 </label>
-                <label className="cursor-pointer flex flex-col group" onClick={(e) => setFilter(e.target.value)}>
-                    <input type="radio" name="filter" value="Motion" className="peer hidden" />
+                <label className="cursor-pointer flex flex-col group">
+                    <input type="radio" name="filter" value="Motion" className="peer hidden" onChange={(e) => handleChangeFilter(e.target.value)} checked={selected === "Motion"} />
                     <span className="px-3 py-1">Motion</span>
                     <span className="h-1 w-full border-b-1 peer-checked:border-b-4 duration-100 group-hover:border-b-3"></span>
                 </label>
-                <label className="cursor-pointer flex flex-col group" onClick={(e) => setFilter(e.target.value)}>
-                    <input type="radio" name="filter" value="UX" className="peer hidden" />
+                <label className="cursor-pointer flex flex-col group">
+                    <input type="radio" name="filter" value="UX" className="peer hidden" onChange={(e) => handleChangeFilter(e.target.value)} checked={selected === "UX"} />
                     <span className="px-3 py-1">UX</span>
                     <span className="h-1 w-full border-b-1 peer-checked:border-b-4 duration-100 group-hover:border-b-3"></span>
                 </label>
-                <label className="cursor-pointer flex flex-col group" onClick={(e) => setFilter(e.target.value)}>
-                    <input type="radio" name="filter" value="Development" className="peer hidden" />
+                <label className="cursor-pointer flex flex-col group">
+                    <input type="radio" name="filter" value="Development" className="peer hidden" onChange={(e) => handleChangeFilter(e.target.value)} checked={selected === "Development"} />
                     <span className="px-3 py-1">Development</span>
                     <span className="h-1 w-full border-b-1 peer-checked:border-b-4 duration-100 group-hover:border-b-3"></span>
                 </label>
