@@ -125,7 +125,7 @@ export const projects = [
         ],
         category: ["UX"],
         primary: { label: "Behance", link: "https://www.behance.net/gallery/214794167/Immigranten-onderzoeksopdracht", desktopOnly: true, alert: "none" },
-        secondary: { label: "Cultural Probe", link: "cultural-probe.pdf", desktopOnly: false, alert: "none" }
+        secondary: { label: "Cultural Probe", link: "https://drive.google.com/file/d/1RN0_feQTV65sUsqfhtBeS0AkC48n9km3/view?usp=sharing", desktopOnly: false, alert: "none" }
     },
     {
         name: "Google Doodle",

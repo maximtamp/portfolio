@@ -1,6 +1,5 @@
 import { useState } from "react";
 import pitchDeck from '../assets/pitch-deck.pdf';
-import culturalProbe from '../assets/cultural-probe.pdf';
 import brandBoard from '../assets/brand-board.pdf';
 
 const ProjectsCard = ({ project, shown, last }) => {
@@ -102,7 +101,7 @@ const ProjectsCard = ({ project, shown, last }) => {
                 <div className="flex justify-between items-center text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)]">
                     <button className={`text-black bg-white px-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] py-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)] duration-100 hover:bg-blue ${project.primary.desktopOnly && window.innerWidth < 880 ? "opacity-50 pointer-events-none" : null}`} onClick={handleClickPrimary}>{project.primary.desktopOnly && window.innerWidth < 880 ? "Desktop Only" : project.primary.label}</button>
                     {project.secondary != "none" && (
-                        <a className={`border-white border-2 px-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] py-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)] duration-100 hover:bg-white hover:text-black ${project.secondary.desktopOnly && window.innerWidth < 880 ? "opacity-50 pointer-events-none" : null}`} href={project.secondary.label === "Pitch Deck" ? pitchDeck : project.secondary.label === "Cultural Probe" ? culturalProbe : project.secondary.label === "Brand Board" ? brandBoard : project.secondary.link } target="_blank">{project.secondary.desktopOnly && window.innerWidth < 880 ? "Desktop Only" : project.secondary.label}</a>
+                        <a className={`border-white border-2 px-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] py-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)] duration-100 hover:bg-white hover:text-black ${project.secondary.desktopOnly && window.innerWidth < 880 ? "opacity-50 pointer-events-none" : null}`} href={project.secondary.label === "Pitch Deck" ? pitchDeck : project.secondary.label === "Brand Board" ? brandBoard : project.secondary.link } target="_blank">{project.secondary.desktopOnly && window.innerWidth < 880 ? "Desktop Only" : project.secondary.label}</a>
                         
                     )}
                 </div>
