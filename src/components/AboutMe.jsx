@@ -150,7 +150,6 @@ const AboutMe = () => {
                         end: "bottom 80%",
                         scrub: true,
                         once: true,
-                        markers: true,
                     }
                 });
                 tl.from(".education-box.bachelor", {
