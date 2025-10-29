@@ -11,13 +11,16 @@ export const skills = [
                 { name: "Vite", icon: "vite-icon.png" },
                 { name: "React", icon: "react-icon.png" },
                 { name: "React Router", icon: "react-router-icon.png" },
+                { name: "React Native", icon: "react-native-icon.png" },
                 { name: "Strapi", icon: "strapi-icon.png" },
                 { name: "Arduino", icon: "arduino-icon.png" },
                 { name: "ml5", icon: "ml5-icon.png" },
                 { name: "GSAP", icon: "gsap-icon.png" },
                 { name: "Github", icon: "github-icon.png" },
+                { name: "WebGL", icon: "webgl-icon.png" },
+                { name: "ThreeJS", icon: "threejs-icon.png" },
             ],
-        skills: ["Responsive", ".json", "Database", "Terminal", "API", "Git", "Deployment", "json Server", "Arduino", "Arduino Ethernet"]
+        skills: ["Responsive", ".json", "Database", "Terminal", "API", "Git", "Deployment", "json Server", "Arduino", "Arduino Ethernet", "App Development"]
         },
         {
             title: "ux",
@@ -27,7 +30,7 @@ export const skills = [
                 { name: "Google Form", icon: "google-form-icon.png" },
             ],
             skills: ["User Testing", "Interview", "Data Visualization", "Information Architecture", "Design Principles", "Prototype", "HMW",
-                "Buy the Feature", "Customer Journey", "Wireframe", "Cultural Probe", "Desk Research", "Persona",
+                "Buy the Feature", "Customer Journey", "Wireframe", "Cultural Probe", "Umwelt", "Desk Research", "Persona",
                 "User Group Definition", "Archetype", "Crazy8's", "Mindmap", "Scamper", "Random Word Associations", "COCD-Box",
                 "6 Thinking Hats", "Decision Matrix", "Assumption Matrix", "User Flow", "Flowchart", "Task Flow", "Wire Flow",
                 "User Goals", "Levels Of Expertise", "Dubble Diamond", "Storyboard", "MoSCoW", "Annotation", "User Tasks",
@@ -102,7 +105,7 @@ export const projects = [
         hashtags: ["User Testing", "Prototyping", "Product"],
         colaborators: [
             { name: "Lenie Debruyne", link: "https://www.linkedin.com/in/lenie-debruyne-700594305/" },
-            { name: "Kiara Lambert", link: "#" }
+            { name: "Kiara Lambert", link: "https://www.linkedin.com/in/kiara-lambert-6ba84a390/" }
         ],
         category: ["UX"],
         primary: { label: "Behance", link: "https://www.behance.net/gallery/225607289/KLM-Watch", desktopOnly: true, alert: "none" },
@@ -121,7 +124,7 @@ export const projects = [
         hashtags: ["DataVisualization", "Interview", "Client"],
         colaborators: [
             { name: "Lenie Debruyne", link: "https://www.linkedin.com/in/lenie-debruyne-700594305/" },
-            { name: "Kiara Lambert", link: "#" }
+            { name: "Kiara Lambert", link: "https://www.linkedin.com/in/kiara-lambert-6ba84a390/" }
         ],
         category: ["UX"],
         primary: { label: "Behance", link: "https://www.behance.net/gallery/214794167/Immigranten-onderzoeksopdracht", desktopOnly: true, alert: "none" },

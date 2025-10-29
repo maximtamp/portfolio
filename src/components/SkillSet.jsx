@@ -53,6 +53,21 @@ const SkillSet = ({ title, tools, skills }) => {
             let mq = gsap.matchMedia();
 
             mq.add("(min-width: 1160px)", () => {
+                gsap.fromTo(`h3`,
+                    { x: "-300%" },
+                    {
+                        x: 0,
+                        duration: 1.5,
+                        ease: "power3.out",
+                        stagger: 0.08,
+                        scrollTrigger: {
+                            trigger: containerRef.current,
+                            start: "top 100%",
+                            toggleActions: "play none none none",
+                        }
+                    }
+                );
+
                 if(title === "development"){
                     gsap.fromTo(".dev-title-char",
                         { opacity: 0 },
@@ -73,7 +88,7 @@ const SkillSet = ({ title, tools, skills }) => {
                 const toolsEl = containerRef.current?.querySelectorAll(`.tools-${title} li`);
                 if(toolsEl && toolsEl.length > 0){
                     gsap.fromTo(`.tools-${title} li`,
-                        { x: "1200%" },
+                        { x: "1300%" },
                         {
                             x: 0,
                             duration: 1.5,
@@ -90,7 +105,7 @@ const SkillSet = ({ title, tools, skills }) => {
                 
                 const skillsEl = containerRef.current?.querySelectorAll(`.skills-${title} li`);
                 if (skillsEl && skillsEl.length > 0) {
-                    gsap.fromTo(skillsEl, { x: "1200%" }, {
+                    gsap.fromTo(skillsEl, { x: "1300%" }, {
                         x: 0,
                         duration: 1.5,
                         ease: "power3.out",
