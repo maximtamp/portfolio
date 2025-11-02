@@ -180,7 +180,7 @@ const SkillSet = ({ title, tools, skills }) => {
                 {tools.map((tool, index) => (
                     <li key={index} className="group grid bg-blue w-[clamp(4rem,_2.5915rem_+_6.0094vw,_8rem)] h-[clamp(4rem,_2.5915rem_+_6.0094vw,_8rem)] p-[clamp(0.375rem,_0.243rem_+_0.5634vw,_0.75rem)]">
                         <h4 className="max-[1000px]:hidden row-1 col-1 opacity-0 relative z-50 w-full h-full flex justify-center items-center py-auto bg-black font-helvetica font-bold text-center text-[16px]/[110%] break-words group-hover:opacity-100 duration-100 group-hover:delay-500">{tool.name}</h4>
-                        {tool.icon ? <img className="row-1 col-1" src={new URL(`../assets/${tool.icon}`, import.meta.url).href} alt={tool.name} />: null}
+                        {tool.icon ? <img className="row-1 col-1" src={new URL(`../assets/${tool.icon}`, import.meta.url).href} alt="" />: null}
                     </li>
                 ))}
             </ul>
@@ -190,7 +190,7 @@ const SkillSet = ({ title, tools, skills }) => {
                 ))}
             </ul>
             {
-                skills.length > 12 ? <button onClick={handleClickShowMore} className='flex items-center gap-2 group w-max mx-auto'>
+                skills.length > 12 ? <button aria-label="Show More or Less" onClick={handleClickShowMore} className='flex items-center gap-2 group w-max mx-auto'>
                     <svg className={`${showMore ? 'rotate-180' : 'rotate-0'}`} width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2 1.5L13 15.5L24 1.5" stroke="#6693DE" stroke-width="3" />
                     </svg>

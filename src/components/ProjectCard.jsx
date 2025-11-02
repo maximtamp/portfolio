@@ -22,7 +22,7 @@ const ProjectsCard = ({ project, shown, last }) => {
 
     return (
         <>
-        <section className={`mx-[clamp(1rem,_-15.625rem_+_50vw,_11.875rem)] grid min-w-[clamp(21.4375rem,_-2rem_+_100vw,_31.25rem)] max-w-[500px] snap-center min-[880px]:mx-0 min-[880px]:min-w-[0px] min-[880px]:w-[clamp(25rem,_-2.5rem_+_50vw,_31.25rem)]`}>
+        <li className={`mx-[clamp(1rem,_-15.625rem_+_50vw,_11.875rem)] grid min-w-[clamp(21.4375rem,_-2rem_+_100vw,_31.25rem)] max-w-[500px] snap-center min-[880px]:mx-0 min-[880px]:min-w-[0px] min-[880px]:w-[clamp(25rem,_-2.5rem_+_50vw,_31.25rem)]`}>
             <div className="row-1 col-1 font-arial flex flex-col-reverse group">
                 <div className="bg-black text-white p-[clamp(0.75rem,_0.5739rem_+_0.7512vw,_1.25rem)] flex flex-col gap-6">
                     <div className="flex flex-col gap-3" >
@@ -46,7 +46,7 @@ const ProjectsCard = ({ project, shown, last }) => {
                     </div>
                     <div className="flex justify-between items-end text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)]">
                         <button className={`text-black bg-white px-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] py-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)] duration-100 hover:bg-blue ${project.primary.desktopOnly && window.innerWidth < 880 ? "opacity-50 pointer-events-none" : null}`} onClick={handleClickPrimary}>{project.primary.desktopOnly && window.innerWidth < 880 ? "Desktop Only" : project.primary.label}</button>
-                        <button onClick={() => setOpen(!open)} className="flex items-center gap-2 cursor-pointer duration-100 hover:underline underline-offset-4 decoration-2">
+                        <button aria-label="Read More" onClick={() => setOpen(!open)} className="flex items-center gap-2 cursor-pointer duration-100 hover:underline underline-offset-4 decoration-2">
                             <p>Read More</p>
                             <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3 1L4 1L21.0113 17.9952L18.89 20.1165L1.99902 3L2 2L1.99927 1.00024L3 1Z" fill="#F2F2F2" />
@@ -77,7 +77,7 @@ const ProjectsCard = ({ project, shown, last }) => {
                             <h3 className="text-[clamp(1.25rem,_1.0739rem_+_0.7512vw,_1.75rem)] font-bold font-helvetica">{project.name}</h3>
                             <p className="text-[clamp(0.875rem,_0.831rem_+_0.1878vw,_1rem)] opacity-75 italic">{project.date}</p>
                         </div>
-                        <button className="bg-blue p-1.5 z-901 cursor-pointer duration-100 hover:bg-white group" onClick={() => setOpen(!open)}>
+                        <button aria-label="Close the Read More" className="bg-blue p-1.5 z-901 cursor-pointer duration-100 hover:bg-white group" onClick={() => setOpen(!open)}>
                             <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect className="group-hover:fill-black duration-100" x="3.60547" y="0.968018" width="30.2167" height="3.72445" transform="rotate(45 3.60547 0.968018)" fill="#F2F2F2" />
                                 <rect className="group-hover:fill-black duration-100" x="24.9531" y="3.58447" width="30.2167" height="3.66936" transform="rotate(135 24.9531 3.58447)" fill="#F2F2F2" />
@@ -99,19 +99,19 @@ const ProjectsCard = ({ project, shown, last }) => {
                     <p className="text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)]/[120%]">{project.description}</p>
                 </div>
                 <div className="flex justify-between items-center text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)]">
-                    <button className={`text-black bg-white px-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] py-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)] duration-100 hover:bg-blue ${project.primary.desktopOnly && window.innerWidth < 880 ? "opacity-50 pointer-events-none" : null}`} onClick={handleClickPrimary}>{project.primary.desktopOnly && window.innerWidth < 880 ? "Desktop Only" : project.primary.label}</button>
+                    <button aria-label="Project Primary Button" className={`text-black bg-white px-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] py-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)] duration-100 hover:bg-blue ${project.primary.desktopOnly && window.innerWidth < 880 ? "opacity-50 pointer-events-none" : null}`} onClick={handleClickPrimary}>{project.primary.desktopOnly && window.innerWidth < 880 ? "Desktop Only" : project.primary.label}</button>
                     {project.secondary != "none" && (
                         <a className={`border-white border-2 px-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] py-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)] duration-100 hover:bg-white hover:text-black ${project.secondary.desktopOnly && window.innerWidth < 880 ? "opacity-50 pointer-events-none" : null}`} href={project.secondary.label === "Pitch Deck" ? pitchDeck : project.secondary.label === "Brand Board" ? brandBoard : project.secondary.link } target="_blank">{project.secondary.desktopOnly && window.innerWidth < 880 ? "Desktop Only" : project.secondary.label}</a>
                         
                     )}
                 </div>
             </div>
-        </section>
-            <div className={`fixed top-0 left-0 w-full h-full bg-white/40 z-1200 flex items-center justify-center ${alertOpen ? null : "visually-hidden"}`} onClick={() => setAlertOpen(false)}>
+        </li>
+            <li className={`fixed top-0 left-0 w-full h-full bg-white/40 z-1200 flex items-center justify-center ${alertOpen ? null : "visually-hidden"}`} onClick={() => setAlertOpen(false)}>
                 <section onClick={(e) => e.stopPropagation()} className="bg-black text-white p-5">
                     <div className="flex items-center justify-between">
                         <h3 className="text-[clamp(1.25rem,_1.0739rem_+_0.7512vw,_1.75rem)] font-bold font-helvetica">Are you sure?</h3>
-                        <button className="bg-blue p-1.5 z-901 cursor-pointer duration-100 hover:bg-white group" onClick={() => setAlertOpen(false)}>
+                        <button aria-label="Close the Alert" className="bg-blue p-1.5 z-901 cursor-pointer duration-100 hover:bg-white group" onClick={() => setAlertOpen(false)}>
                             <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <rect className="group-hover:fill-black duration-100" x="3.60547" y="0.968018" width="30.2167" height="3.72445" transform="rotate(45 3.60547 0.968018)" fill="#F2F2F2" />
                                 <rect className="group-hover:fill-black duration-100" x="24.9531" y="3.58447" width="30.2167" height="3.66936" transform="rotate(135 24.9531 3.58447)" fill="#F2F2F2" />
@@ -120,11 +120,11 @@ const ProjectsCard = ({ project, shown, last }) => {
                     </div>
                     <p className="text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)]/[120%] w-125 mt-6">{project.primary.alert}</p>
                     <div className="flex justify-between items-center text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)] mt-8">
-                        <button onClick={() => setAlertOpen(false)} className="text-black bg-white px-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] py-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)] duration-100 hover:bg-blue">Cancel</button>
-                        <button onClick={handleClickContinue} className="border-white border-2 px-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] py-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)] duration-100 hover:bg-white hover:text-black">Continue</button>
+                        <button aria-label="Cancel" onClick={() => setAlertOpen(false)} className="text-black bg-white px-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] py-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)] duration-100 hover:bg-blue">Cancel</button>
+                        <button aria-label="Continue" onClick={handleClickContinue} className="border-white border-2 px-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] py-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)] duration-100 hover:bg-white hover:text-black">Continue</button>
                     </div>
                 </section>
-            </div>
+            </li>
         </>
     );
 };

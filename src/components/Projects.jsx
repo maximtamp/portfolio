@@ -125,7 +125,7 @@ const Projects = () => {
                     <ProjectsCard key={index} project={project} shown={index === currentIndex} last={index === filteredProjects.length - 1} />
                 ))}
             </ul>
-            <button onClick={handleShowMore} className='max-[880px]:hidden mx-auto mt-12 cursor-pointer group flex'>
+            <button aria-label="Show More or Less" onClick={handleShowMore} className='max-[880px]:hidden mx-auto mt-12 cursor-pointer group flex'>
                 <a href={`${showMore ? '#' : '#projects-filter'}`} className={`${showMore ? '' : 'pointer-events-none'} flex items-center gap-2`}>
                     <svg className={`${showMore ? 'rotate-180' : 'rotate-0'}`} width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2 1.5L13 15.5L24 1.5" stroke="#6693DE" stroke-width="3" />
@@ -134,7 +134,7 @@ const Projects = () => {
                 </a>
             </button>
             <div className="flex justify-between mx-[clamp(1rem,_-15.625rem_+_50vw,_11.875rem)] mt-8 w-[clamp(21.4375rem,_-2rem_+_100vw,_31.25rem)] min-[880px]:hidden">
-                <button onClick={() => scroll('left')} className={`p-3 ${currentIndex === 0 ? "bg-transparent pointer-events-none" : "bg-black"}`}>
+                <button aria-label="To the Left Button" onClick={() => scroll('left')} className={`p-3 ${currentIndex === 0 ? "bg-transparent pointer-events-none" : "bg-black"}`}>
                     <svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4.92506e-07 15.8161L28 -3.8147e-06L28 32L4.92506e-07 15.8161Z" fill="#F2F2F2" />
                     </svg>
@@ -146,7 +146,7 @@ const Projects = () => {
                         ))
                     }
                 </ul>
-                <button onClick={() => scroll('right')} className={`p-3 ${currentIndex === filteredProjects.length - 1 ? "bg-transparent pointer-events-none" : "bg-black"}`}>
+                <button aria-label="To the Right Button" onClick={() => scroll('right')} className={`p-3 ${currentIndex === filteredProjects.length - 1 ? "bg-transparent pointer-events-none" : "bg-black"}`}>
                     <svg width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M28 15.8161L2.79753e-06 -3.8147e-06L0 32L28 15.8161Z" fill="#F2F2F2" />
                     </svg>
