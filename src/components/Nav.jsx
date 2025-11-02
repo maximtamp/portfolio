@@ -23,7 +23,7 @@ const Nav = ({ onTop, open, setOpen }) => {
                             <a onClick={handleClickNav} className="bg-blue text-white text-[20px] px-1.5 py-1 md:bg-transparent md:text-black md:p-0 md:hover:text-blue md:duration-100" href="#working-on">Working On</a>
                         </li>
                     </ul>
-                    <button onClick={handleClickNav} className={`relative w-7 h-6 flex flex-col justify-between items-center gap-1 ${onTop ? null : "bg-blue w-11 h-11 px-2 py-2.5"} md:hidden`} >
+                    <button aria-label="Open menu" onClick={handleClickNav} className={`relative w-7 h-6 flex flex-col justify-between items-center gap-1 ${onTop ? null : "bg-blue w-11 h-11 px-2 py-2.5"} md:hidden`} >
                         <span className={`block h-1 w-full bg-black transition-transform duration-200 ${open ? "rotate-45 translate-y-2.5" : ""} ${onTop ? null : "bg-white"}`}/>
                         <span className={`block h-1 w-full bg-black transition-opacity duration-200 ${open ? "opacity-0" : "opacity-100"} ${onTop ? null : "bg-white"}`}/>
                         <span className={`block h-1 w-full bg-black transition-transform duration-200 ${open ? "-rotate-45 -translate-y-2.5" : ""} ${onTop ? null : "bg-white"}`} />

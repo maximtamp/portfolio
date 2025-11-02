@@ -23,7 +23,7 @@ const ProjectsFilter = ({ setFilter }) => {
                     </select>
                     <img
                         src={new URL("../assets/dropdown-arrow.svg", import.meta.url).href}
-                        alt=""
+                        alt="Dropdown Arrow"
                         className="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2"
                     />
                 </div>

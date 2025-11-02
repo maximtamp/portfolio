@@ -190,7 +190,7 @@ const AboutMe = () => {
                     </li>
                     <li className="image-box w-[clamp(21.5rem,_19.3873rem_+_9.0141vw,_27.5rem)] h-[clamp(21.5rem,_19.3873rem_+_9.0141vw,_27.5rem)] row-start-1 row-end-2 col-start-4 col-end-5">
                         <h3 className="visually-hidden">Picture</h3>
-                        <img src={photoMe} alt="" />
+                        <img src={photoMe} alt="Photo of Me" />
                     </li>
                     <li className="languages-box w-[clamp(21.5rem,_19.3873rem_+_9.0141vw,_27.5rem)] h-[clamp(10rem,_9.1197rem_+_3.7559vw,_12.5rem)] row-1 col-start-2 col-end-3 bg-black text-white flex flex-col-reverse justify-center items-center pt-3 min-[1160px]:row-2">
                         <h3 className="font-arial text-[clamp(1.125rem,_0.993rem_+_0.5634vw,_1.5rem)] opacity-80 mt-1">Languages</h3>
