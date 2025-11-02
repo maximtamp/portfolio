@@ -13,12 +13,12 @@ const Footer = () => {
                 <ul className="font-bold text-black flex flex-col gap-3 mt-auto sm:row-start-2 sm:-row-span-1 sm:col-start-1 sm:-col-span-2 sm:flex-row sm:gap-6 min-[1000px]:flex-row min-[1000px]:gap-5 min-[1000px]:items-center min-[1000px]:my-auto min-[1000px]:ml-auto">
                     <li><a href="mailto:maxim.tampere@gmail.com" className="duration-100 hover:text-blue">Contact</a></li>
                     <li><a href="https://www.linkedin.com/in/maxim-tampere-669460323/" className="duration-100 hover:text-blue">LinkedIn</a></li>
-                    <li><a href="https://www.instagram.com/maximtamp/" className="duration-100 hover:text-blue">Instagram</a></li>
+                    <li><a href="/portfolio/resume.pdf" target="_blank" rel="noopener noreferrer" className="duration-100 hover:text-blue">Resume</a></li>
                 </ul>
             </div>
             <div className="text-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] opacity-50 flex justify-between mt-14 min-[1000px]:mt-8">
                 <p>By MaximTamp.</p>
-                <p>Updated August 30 2025</p>
+                <p>Updated: November 2, 2025</p>
             </div>
         </footer>
     );

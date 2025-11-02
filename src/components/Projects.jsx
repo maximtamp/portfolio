@@ -37,25 +37,34 @@ const Projects = () => {
 
     const scroll = (direction) => {
         if (scrollRef.current) {
-            const scrollAmount = scrollRef.current.offsetWidth;
+            const cards = scrollRef.current.children;
+            if (cards.length === 0) return;
+
+            const cardStyle = window.getComputedStyle(cards[0]);
+            const cardWidth = cards[0].offsetWidth + parseFloat(cardStyle.marginLeft) + parseFloat(cardStyle.marginRight);
+
             scrollRef.current.scrollBy({
-                left: direction === 'left' ? -scrollAmount : scrollAmount,
+                left: direction === 'left' ? -cardWidth : cardWidth,
                 behavior: 'smooth',
             });
         }
     };
 
+
     const onScroll = () => {
         if (scrollRef.current) {
-            const scrollLeft = scrollRef.current.scrollLeft;
-            const totalWidth = scrollRef.current.scrollWidth;
-            const itemCount = scrollRef.current.childElementCount;
-            const cardWidth = totalWidth / itemCount;
+            const cards = scrollRef.current.children;
+            if (cards.length === 0) return;
 
+            const cardStyle = window.getComputedStyle(cards[0]);
+            const cardWidth = cards[0].offsetWidth + parseFloat(cardStyle.marginLeft) + parseFloat(cardStyle.marginRight);
+            const scrollLeft = scrollRef.current.scrollLeft;
             const index = Math.round(scrollLeft / cardWidth);
+
             setCurrentIndex(index);
         }
     };
+
 
     const handleShowMore = () => {
         setShowMore(!showMore);

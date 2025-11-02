@@ -68,6 +68,21 @@ const SkillSet = ({ title, tools, skills }) => {
                     }
                 );
 
+                gsap.fromTo(`button`,
+                    { x: "-300%" },
+                    {
+                        x: 0,
+                        duration: 1.5,
+                        ease: "power3.out",
+                        stagger: 0.08,
+                        scrollTrigger: {
+                            trigger: containerRef.current,
+                            start: "top 100%",
+                            toggleActions: "play none none none",
+                        }
+                    }
+                );
+
                 if(title === "development"){
                     gsap.fromTo(".dev-title-char",
                         { opacity: 0 },
