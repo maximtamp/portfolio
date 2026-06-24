@@ -94,7 +94,7 @@ export const projects = [
             { name: "Tiemen Dhondt", link: "https://www.linkedin.com/in/tiemen-dhondt/" }
         ],
         category: ["UX", "Design", "Motion", "Development"],
-        primary: { label: "Showcase", link: "https://youtu.be/E-xQgpeG9Mc", desktopOnly: false, alert: "none" },
+        primary: { label: "Showcase", link: "https://youtu.be/DYJqYX93VLg", desktopOnly: false, alert: "none" },
         secondary: { label: "Blog", link: "https://www.notion.so/Passion-Project-Blog-Tampere-Maxim-2a97531c38b9806b887fcae958dc4972?source=copy_link", desktopOnly: false, alert: "none" },
         detailPageURL: "/journey-to-the-upperworld"
     },
