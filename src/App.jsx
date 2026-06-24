@@ -1,42 +1,21 @@
-import { useState, useEffect } from 'react'
-import Nav from './components/Nav'
-import Hero from './components/Hero'
-import AboutMe from './components/AboutMe'
-import Skills from './components/Skills'
-import Projects from './components/Projects'
-import WorkingOn from './components/WorkingOn'
-import Footer from './components/Footer'
+import { Routes, Route } from 'react-router-dom'
+import Home from './pages/Home.jsx'
+import CarStep from './pages/CarStep.jsx'
+import JourneyToTheUpperworld from './pages/JourneyToTheUpperworld.jsx'
+
+import Nav from './components/Nav.jsx'
+import ScrollRestoration from './ScrollRestoration.jsx'
 
 function App() {
-  const [onTop, setOnTop] = useState(true)
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setOnTop(window.scrollY === 0)
-      setOpen(false)
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
-
-  const handleOpen = () => {
-    setOpen(!open)
-  }
-
   return (
-    <main id='main' className='bg-white selection:bg-blue selection:text-white overflow-x-hidden'>
-      <div className='h-dvh flex flex-col justify-between'>
-        <Nav onTop={onTop} open={open} setOpen={handleOpen} />
-        <Hero />
-      </div>
-      <AboutMe />
-      <Skills />
-      <Projects />
-      <WorkingOn />
-      <Footer />
-    </main>
+    <>
+      <ScrollRestoration />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/car-step/" element={<CarStep />} />
+        <Route path="/journey-to-the-upperworld/" element={<JourneyToTheUpperworld />} />
+      </Routes>
+    </>
   )
 }
 
