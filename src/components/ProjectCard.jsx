@@ -1,8 +1,10 @@
 import { useState } from "react";
 import pitchDeck from '../assets/pitch-deck.pdf';
 import brandBoard from '../assets/brand-board.pdf';
+import { useNavigate } from "react-router-dom";
 
 const ProjectsCard = ({ project, shown, last }) => {
+    const navigate = useNavigate();
     const [open, setOpen] = useState(false);
     const [alertOpen, setAlertOpen] = useState(false);
 
@@ -19,6 +21,11 @@ const ProjectsCard = ({ project, shown, last }) => {
         setAlertOpen(false)
         window.open(project.primary.link, "_blank");
     }
+
+    const handleNavigate = () => {
+    
+        navigate(project.detailPageURL);
+    };
 
     return (
         <>
@@ -46,7 +53,7 @@ const ProjectsCard = ({ project, shown, last }) => {
                     </div>
                     <div className="flex justify-between items-end text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)]">
                         <button className={`text-black bg-white px-[clamp(0.75rem,_0.662rem_+_0.3756vw,_1rem)] py-[clamp(0.5rem,_0.412rem_+_0.3756vw,_0.75rem)] duration-100 hover:bg-blue ${project.primary.desktopOnly && window.innerWidth < 880 ? "opacity-50 pointer-events-none" : null}`} onClick={handleClickPrimary}>{project.primary.desktopOnly && window.innerWidth < 880 ? "Desktop Only" : project.primary.label}</button>
-                        <button aria-label="Read More" onClick={() => setOpen(!open)} className="flex items-center gap-2 cursor-pointer duration-100 hover:underline underline-offset-4 decoration-2">
+                            <button aria-label="Read More" onClick={project.detailPageURL !== "none" ? handleNavigate : () => setOpen(!open)} className="flex items-center gap-2 cursor-pointer duration-100 hover:underline underline-offset-4 decoration-2">
                             <p>Read More</p>
                             <svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M3 1L4 1L21.0113 17.9952L18.89 20.1165L1.99902 3L2 2L1.99927 1.00024L3 1Z" fill="#F2F2F2" />

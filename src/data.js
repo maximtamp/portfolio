@@ -19,8 +19,13 @@ export const skills = [
                 { name: "Github", icon: "github-icon.png" },
                 { name: "WebGL", icon: "webgl-icon.png" },
                 { name: "ThreeJS", icon: "threejs-icon.png" },
+                { name: "Swift", icon: "swift-icon.png" },
+                { name: "Xcode", icon: "xcode-icon.png" },
+                { name: "Tailwind CSS", icon:"tailwind-icon.png"},
+                { name: "Next.js", icon:"nextjs-icon.png"},
+                { name: "Playwright", icon:"playwright-icon.png"}
             ],
-        skills: ["Responsive", ".json", "Database", "Terminal", "API", "Git", "Deployment", "json Server", "Arduino", "Arduino Ethernet", "App Development"]
+        skills: ["Responsive", ".json", "Database", "Terminal", "API", "Repository", "Deployment", "json Server", "App Development"]
         },
         {
             title: "ux",
@@ -30,11 +35,11 @@ export const skills = [
                 { name: "Google Form", icon: "google-form-icon.png" },
             ],
             skills: ["User Testing", "Interview", "Data Visualization", "Information Architecture", "Design Principles", "Prototype", "HMW",
-                "Buy the Feature", "Customer Journey", "Wireframe", "Cultural Probe", "Umwelt", "Desk Research", "Persona",
-                "User Group Definition", "Archetype", "Crazy8's", "Mindmap", "Scamper", "Random Word Associations", "COCD-Box",
-                "6 Thinking Hats", "Decision Matrix", "Assumption Matrix", "User Flow", "Flowchart", "Task Flow", "Wire Flow",
+                "Customer Journey", "Wireframe", "Cultural Probe", "Desk Research", "Persona",
+                "User Group Definition", "Archetype", "Brainstorming", "COCD-Box",
+                "6 Thinking Hats", "Assumption Matrix", "User Flow", "Flowchart", "Task Flow", "Wire Flow",
                 "User Goals", "Levels Of Expertise", "Dubble Diamond", "Storyboard", "MoSCoW", "Annotation", "User Tasks",
-                "Iteratie", "Survey", "Observation", "10 Heuristics", "Sketchnotes"]
+                "Iteratie", "Survey", "Observation", "10 Heuristics"]
         },
         {
             title: "design",
@@ -58,6 +63,42 @@ export const skills = [
 
 export const projects = [
     {
+        name: "Car Step",
+        date: "Jan 2026",
+        description: "For my last year of Divine, I needed to create a passion project. I was already invested in app development, so I wanted to explore the depths of Apple App Development, specifically Swift. Are you curious what I made? See my journey here in my blog",
+        thumbnail: "car-step-thumbnail.png",
+        tools: [
+            { name: "Swift", icon: "swift-icon.png" },
+            { name: "Xcode", icon: "xcode-icon.png" },
+            { name: "Supabase", icon: "supabase-icon.png" },
+        ],
+        hashtags: ["IOS", "AppDevelopment", "Watch"],
+        colaborators: "none",
+        category: ["Development"],
+        primary: { label: "Showcase", link: "https://youtu.be/E-xQgpeG9Mc", desktopOnly: false, alert: "none" },
+        secondary: { label: "Blog", link: "https://www.notion.so/Passion-Project-Blog-Tampere-Maxim-2a97531c38b9806b887fcae958dc4972?source=copy_link", desktopOnly: false, alert: "none" },
+        detailPageURL: "/car-step"
+    },
+    {
+        name: "Journey to the Upperworld",
+        date: "Dec 2025",
+        description: "For my last year of Divine, I needed to create a passion project. I was already invested in app development, so I wanted to explore the depths of Apple App Development, specifically Swift. Are you curious what I made? See my journey here in my blog",
+        thumbnail: "reis-naar-de-bovenwereld-thumbnail.png",
+        tools: [
+            { name: "Phazer", icon: "phazer-icon.png" },
+            { name: "Figma", icon: "figma-icon.png" },
+        ],
+        hashtags: ["Installation", "JEF", "Kids", "Storytelling"],
+        colaborators: [
+            { name: "Jara Verbrugghe", link: "https://www.linkedin.com/in/jara-verbrugghe-b11727243/" },
+            { name: "Tiemen Dhondt", link: "https://www.linkedin.com/in/tiemen-dhondt/" }
+        ],
+        category: ["UX", "Design", "Motion", "Development"],
+        primary: { label: "Showcase", link: "https://youtu.be/E-xQgpeG9Mc", desktopOnly: false, alert: "none" },
+        secondary: { label: "Blog", link: "https://www.notion.so/Passion-Project-Blog-Tampere-Maxim-2a97531c38b9806b887fcae958dc4972?source=copy_link", desktopOnly: false, alert: "none" },
+        detailPageURL: "/journey-to-the-upperworld"
+    },
+    {
         name: "The Raid on Plantin",
         date: "Jan 2025",
         description: "The Plantin-Moretus Museum in Antwerp is a fun museum where you can relive the life of Plantin. For this client, we needed to create a digital site to attract people to go to the museum, and we needed to tell his story in a fun and interactive way. Want to relive his story? live it…",
@@ -71,7 +112,8 @@ export const projects = [
         colaborators: "none",
         category: ["UX", "Design", "Motion", "Development"],
         primary: { label: "Live Demo", link: "https://maximtampstu.github.io/the-raid-on-plantin/", desktopOnly: false, alert: "none"},
-        secondary: "none"
+        secondary: "none",
+        detailPageURL: "none"
     },
     {
         name: "Fubble",
@@ -89,9 +131,10 @@ export const projects = [
         category: ["UX", "Design", "Development"],
         primary: {
             label: "Live Demo", link: "https://tamperemaxim.be/fubble/", desktopOnly: true, alert: "This Project is not responsive, you will have the best experience on a 1470x720 Mac screen." },
-        secondary: "none"
+        secondary: "none",
+        detailPageURL: "none"
     },
-    {
+    /*{
         name: "Float",
         date: "Oct 2025",
         description: "Websites can be boring, right? Always 2D and scrolling, what if we put 3D on the web? For this project, I used Three.js to create a 3D game where you clean the ocean by removing containers from the water with a boat. We also explored WebGL, using shaders to bring extra life to our world. You want to clean the ocean, right? What’s stopping you… do it now!",
@@ -104,8 +147,9 @@ export const projects = [
         colaborators: "none",
         category: ["Development"],
         primary: { label: "Live Demo", link: "https://maximtamp.github.io/float/", desktopOnly: true, alert: "none" },
-        secondary: "none"
-    },
+        secondary: "none",
+        detailPageURL: "none"
+    },*/
     {
         name: "City of Walls",
         date: "Oct 2025",
@@ -119,9 +163,10 @@ export const projects = [
         colaborators: "none",
         category: ["UX"],
         primary: { label: "Behance", link: "https://www.behance.net/gallery/237249925/Umwelt-City-Of-Walls", desktopOnly: true, alert: "none" },
-        secondary: { label: "Research Blog", link: "https://www.notion.so/Blog-Grey-Heron-Tampere-Maxim-1da12f4e78ed80f08b94ef591a852684?source=copy_link", desktopOnly: false, alert: "none" }
+        secondary: { label: "Research Blog", link: "https://www.notion.so/Blog-Grey-Heron-Tampere-Maxim-1da12f4e78ed80f08b94ef591a852684?source=copy_link", desktopOnly: false, alert: "none" },
+        detailPageURL: "none"
     },
-    {
+    /*{
         name: "Mood",
         date: "Sep 2025",
         description: "Something I’ve always wanted to learn was app development, and finally the opportunity came: we got introduced to web development using React Native. We also had an assignment to create an app. I decided to make a mood, tracking app where you can log your mood daily. You can also listen to inspiring quotes depending on your mood. And don’t worry, your data is safe; it can only be deleted with your Face ID or passcode.",
@@ -133,8 +178,9 @@ export const projects = [
         colaborators: "none",
         category: ["Development"],
         primary: { label: "Watch Demo", link: "https://youtu.be/aqedWszUz84", desktopOnly: false, alert: "none" },
-        secondary: "none"
-    },
+        secondary: "none",
+        detailPageURL: "none"
+    },*/
     {
         name: "Do It",
         date: "May 2025",
@@ -147,7 +193,8 @@ export const projects = [
         colaborators: "none",
         category: ["Development"],
         primary: { label: "Watch Demo", link: "https://youtu.be/pM_0T0_jJ14", desktopOnly: false, alert: "none" },
-        secondary: "none"
+        secondary: "none",
+        detailPageURL: "none"
     },
     {
         name: "KLM Watch",
@@ -167,7 +214,8 @@ export const projects = [
         ],
         category: ["UX"],
         primary: { label: "Behance", link: "https://www.behance.net/gallery/225607289/KLM-Watch", desktopOnly: true, alert: "none" },
-        secondary: "none"
+        secondary: "none",
+        detailPageURL: "none"
     },
     {
         name: "MixBox",
@@ -182,7 +230,8 @@ export const projects = [
         colaborators: "none",
         category: ["Design"],
         primary: { label: "Prototype", link: "https://www.figma.com/proto/WR3Ppryiecqc8fUNcIstgr/MaximTampere_VD4_MixBox?page-id=3377%3A11686&node-id=3448-8539&p=f&viewport=26%2C900%2C0.34&t=1cv5xr4AzLDLUp5j-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=3448%3A8539&show-proto-sidebar=1", desktopOnly: false, alert: "none" },
-        secondary: { label: "Brand Board", link: "brand-board.pdf", desktopOnly: false, alert: "none" }
+        secondary: { label: "Brand Board", link: "brand-board.pdf", desktopOnly: false, alert: "none" },
+        detailPageURL: "none"
     },
     {
         name: "SNAKE Watch",
@@ -202,6 +251,7 @@ export const projects = [
         category: ["Motion"],
         primary: { label: "Watch", link: "https://youtu.be/EU8MaxXv-74", desktopOnly: false, alert: "none" },
         secondary: { label: "Pitch Deck", link: "pitch-deck.pdf", desktopOnly: false, alert: "none" },
+        detailPageURL: "none"
     },
     {
         name: "Immigrant Research",
@@ -220,7 +270,8 @@ export const projects = [
         ],
         category: ["UX"],
         primary: { label: "Behance", link: "https://www.behance.net/gallery/214794167/Immigranten-onderzoeksopdracht", desktopOnly: true, alert: "none" },
-        secondary: { label: "Cultural Probe", link: "https://drive.google.com/file/d/1RN0_feQTV65sUsqfhtBeS0AkC48n9km3/view?usp=sharing", desktopOnly: false, alert: "none" }
+        secondary: { label: "Cultural Probe", link: "https://drive.google.com/file/d/1RN0_feQTV65sUsqfhtBeS0AkC48n9km3/view?usp=sharing", desktopOnly: false, alert: "none" },
+        detailPageURL: "none"
     },
     {
         name: "Google Doodle",
@@ -235,9 +286,10 @@ export const projects = [
         colaborators: "none",
         category: ["Motion"],
         primary: { label: "Watch", link: "https://youtu.be/7S_OF7zd77c", desktopOnly: false, alert: "none" },
-        secondary: "none"
+        secondary: "none",
+        detailPageURL: "none"
     },
-    {
+    /*{
         name: "Responsive Telenet",
         date: "Dec 2024",
         description: "Telenet hosted an event about digital society for ALL. For this event, we needed to create a responsible site that can be viewed on all sorts of devices. So we needed to think about what design strategies were best to use on the platform. It was an event from Telenet, so it was important that it looked like a site from Telenet, so the style and communication needed to fit Telenet. Got to take a look at how I did it.",
@@ -251,7 +303,8 @@ export const projects = [
         category: ["Design"],
         primary: { label: "Prototype", link: "https://www.figma.com/proto/XKEopjrFfirumgb4oL4yUZ/2DEV-N_TampereMaxim_Telenet--1-?page-id=99%3A12&node-id=99-3599&viewport=420%2C360%2C0.06&t=LBLP5fnd5IBKf0s9-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=99%3A3599&show-proto-sidebar=1", desktopOnly: false, alert: "none" },
         secondary: "none",
-    },
+        detailPageURL: "none"
+    },*/
     {
         name: "Move Your Blood",
         date: "Nov 2024",
@@ -266,6 +319,7 @@ export const projects = [
         category: ["Design"],
         primary: { label: "Prototype", link: "https://www.figma.com/proto/RTSCzaMEL4cH13iLrcmBFG/move-your-blood?page-id=1%3A2&node-id=127-182&p=f&viewport=178%2C245%2C0.07&t=BCKQRDOvCaa4Dw7w-1&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=127%3A182", desktopOnly: true, alert: "none" },
         secondary: "none",
+        detailPageURL: "none"
     },
     {
         name: "Simon Sign",
@@ -280,7 +334,8 @@ export const projects = [
         colaborators: "none",
         category: ["Development"],
         primary: { label: "Live Demo", link: "https://maximtamp.github.io/simon-sign/", desktopOnly: true, alert: "none" },
-        secondary: "none"
+        secondary: "none",
+        detailPageURL: "none"
     }
 ];
 

@@ -128,7 +128,7 @@ const Projects = () => {
             <button aria-label="Show More or Less" onClick={handleShowMore} className='max-[880px]:hidden mx-auto mt-12 cursor-pointer group flex'>
                 <a href={`${showMore ? '#' : '#projects-filter'}`} className={`${showMore ? '' : 'pointer-events-none'} flex items-center gap-2`}>
                     <svg className={`${showMore ? 'rotate-180' : 'rotate-0'}`} width="26" height="18" viewBox="0 0 26 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2 1.5L13 15.5L24 1.5" stroke="#6693DE" stroke-width="3" />
+                        <path d="M2 1.5L13 15.5L24 1.5" stroke="#4477d1" stroke-width="3" />
                     </svg>
                     <p className='text-[20px] text-blue font-medium duration-100 group-hover:underline underline-offset-4 decoration-3'>{showMore ? 'Show Less' : 'Discover More'}</p>
                 </a>

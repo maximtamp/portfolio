@@ -281,7 +281,7 @@ const AboutMe = () => {
                                             <h4 className="font-helvetica text-[clamp(1.5rem,_1.412rem_+_0.3756vw,_1.75rem)]/[110%] font-bold">Digital Design and Development</h4>
                                             <p className="text-[clamp(1rem,_0.912rem_+_0.3756vw,_1.25rem)] italic opacity-60">Bachelor Diploma</p>
                                         </div>
-                                        <p className="text-[clamp(1.125rem,_0.993rem_+_0.5634vw,_1.5rem)]">Sep 2023 - ...</p>
+                                        <p className="text-[clamp(1.125rem,_0.993rem_+_0.5634vw,_1.5rem)]">Sep 2023 - Sep 2026</p>
                                     </div>
                                     <p className="text-[clamp(1.125rem,_0.993rem_+_0.5634vw,_1.5rem)]/[120%]">Learned to design and develop user-friendly web applications using UX/UI principles and technologies like HTML, CSS, JavaScript, ...</p>
                                 </div>
