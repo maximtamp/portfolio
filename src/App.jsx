@@ -12,8 +12,8 @@ function App() {
       <ScrollRestoration />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/car-step/" element={<CarStep />} />
-        <Route path="/journey-to-the-upperworld/" element={<JourneyToTheUpperworld />} />
+        <Route path="car-step" element={<CarStep />} />
+        <Route path="journey-to-the-upperworld" element={<JourneyToTheUpperworld />} />
       </Routes>
     </>
   )
